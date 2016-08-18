@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'figaro'
 gem 'devise'
 gem 'omniauth-github'
+# gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -38,7 +39,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'faker'
-  gem 'webmock'
+  # gem 'webmock'
 end
 
 group :development do
