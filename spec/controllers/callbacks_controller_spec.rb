@@ -1,12 +1,6 @@
 require 'rails_helper'
+require 'webmock/rspec'
 
 RSpec.describe CallbacksController, type: :controller do
-
-  describe "GET #github" do
-    it "returns http success" do
-      get :github
-      expect(response).to have_http_status(:success)
-    end
-  end
 
 end
