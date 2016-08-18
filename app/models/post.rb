@@ -4,4 +4,7 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
+  validates :user_id, presence: true
+  validates :project_id, presence: true
+
 end

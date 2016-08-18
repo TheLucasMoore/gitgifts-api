@@ -31,8 +31,18 @@ RSpec.describe Reward, type: :model do
     expect(reward.user).to eq(@user)
   end
 
+  it "MUST belong to a user to be valid" do
+    reward = FactoryGirl.build(:reward, user_id: nil)
+    expect(reward.save).to be false
+  end
+
   it "belongs to a project" do
     reward = FactoryGirl.create(:reward, project_id: @project.id)
     expect(reward.project).to eq(@project)
+  end
+
+  it "MUST belong to a project to be valid" do
+    reward = FactoryGirl.build(:reward, project_id: nil)
+    expect(reward.save).to be false
   end
 end

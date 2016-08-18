@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
   end
 
   it "validates presence of a github username" do
-    user = FactoryGirl.build(:user, github: " ")
+    user = FactoryGirl.build(:user, github: nil)
     expect(user).to_not be_valid
   end
 
@@ -18,12 +18,20 @@ RSpec.describe User, type: :model do
   end
 
   it "is invalid without a password" do
-    user = FactoryGirl.build(:user, password: "")
+    user = FactoryGirl.build(:user, password: nil)
     expect(user).to_not be_valid
   end
 
   it "is invalid without an email" do
-    user = FactoryGirl.build(:user, email: "")
+    user = FactoryGirl.build(:user, email: nil)
     expect(user).to_not be_valid
+  end
+
+  it "has many projects" do
+    @user = FactoryGirl.create(:user)
+    5.times do
+      FactoryGirl.create(:project, user_id: @user.id)
+    end
+    expect(@user.projects.size).to eq(5)
   end
 end

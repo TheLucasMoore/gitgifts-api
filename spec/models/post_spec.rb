@@ -26,8 +26,18 @@ RSpec.describe Post, type: :model do
     expect(@post.project).to eq(@project)
   end
 
+  it "MUST belong to a project to be valid" do
+    post = FactoryGirl.build(:post, project_id: nil)
+    expect(post.save).to be false
+  end
+
   it "belongs to a user" do
     @post = FactoryGirl.create(:post, user_id: @user.id)
     expect(@post.user).to eq(@user)
+  end
+
+  it "MUST belong to a user to be valid" do
+    post = FactoryGirl.build(:post, user_id: nil)
+    expect(post.save).to be false
   end
 end

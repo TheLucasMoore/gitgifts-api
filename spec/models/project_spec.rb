@@ -40,6 +40,10 @@ RSpec.describe Project, type: :model do
   it "belongs to a user" do
     project = FactoryGirl.create(:project, user_id: @user.id)
     expect(project.user).to eq(@user)
+  end
 
+  it "MUST belong to a user to be valid" do
+    project = FactoryGirl.build(:project, user_id: nil)
+    expect(project.save).to be false
   end
 end

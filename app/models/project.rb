@@ -5,4 +5,5 @@ class Project < ApplicationRecord
   validates :goal, presence: true, numericality: { only_integer: true }
   validates :title, presence: true
   validates :description, presence: true
+  validates :user_id, presence: true
 end
