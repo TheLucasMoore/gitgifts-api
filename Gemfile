@@ -40,6 +40,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'faker'
   # gem 'webmock'
+  gem 'stripe-ruby-mock'
 end
 
 group :development do

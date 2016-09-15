@@ -18,5 +18,13 @@ RSpec.describe ProjectsController, type: :controller do
       expect(response).to be_success
       expect(json["title"]).to eq(project.title)
     end
+
+    # it 'only allows a usee to delete their own project'
+    #   user1 = FactoryGirl.create(:user)
+    #   user2 = FactoryGirl.create(:user)
+    #   project = FactoryGirl.create(:project, user: user1)
+    #   delete '/projects/#{project.id}', method: :delete
+    # end
+
   end
 end
