@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'figaro'
 gem 'devise'
 gem 'omniauth-github'
+gem 'stripe-rails'
 # gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
